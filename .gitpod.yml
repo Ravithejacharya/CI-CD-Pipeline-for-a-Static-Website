@@ -1,0 +1,14 @@
+// Gitpod configuration for cloud development environment
+tasks:
+  - init: npm install
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - dbaeumer.vscode-eslint
+    - jest.runner

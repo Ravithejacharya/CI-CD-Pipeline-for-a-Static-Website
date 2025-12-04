@@ -1,0 +1,15 @@
+# Trivy Configuration
+# Security scanning configuration for container and filesystem analysis
+
+severity:
+  - HIGH
+  - CRITICAL
+
+exit-code: 1
+
+skip-update: false
+
+format: json
+
+# Ignore specific CVEs (if needed)
+# ignorefile: .trivyignore

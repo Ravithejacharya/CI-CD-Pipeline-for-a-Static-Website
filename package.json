@@ -1,0 +1,38 @@
+{
+  "name": "static-website-cicd",
+  "version": "1.0.0",
+  "description": "CI/CD pipeline for static website with GitHub Actions, Docker, and AWS deployment",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run build && serve -s dist -l 3000",
+    "build": "npm run copy:assets",
+    "copy:assets": "node scripts/build.js",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "docker:build": "docker build -t static-website:latest .",
+    "docker:run": "docker run -p 3000:3000 static-website:latest",
+    "docker:compose": "docker-compose up",
+    "start": "serve -s dist -l 3000"
+  },
+  "keywords": [
+    "cicd",
+    "github-actions",
+    "docker",
+    "aws",
+    "s3",
+    "cloudfront"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0",
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
